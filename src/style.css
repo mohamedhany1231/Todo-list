@@ -1,0 +1,169 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  --white-bg: #eee;
+  --light-blue: #60a5fa;
+  --dark-blue: #1e3a8a;
+  --light-secondary-color: #dfdfdf;
+  --darker-secondary-color: #aaa;
+  background-color: var(--white-bg);
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  min-height: 100vh;
+}
+.navbar {
+  background-color: white;
+  box-shadow: 5px 0px 10px #0000002e;
+}
+#content {
+  margin: 5vh 5vw;
+  background-color: var(--white-bg);
+}
+.projects-div {
+  display: flex;
+  gap: 20px;
+}
+.project-container {
+  border: 2px solid var(--dark-blue);
+  width: 50%;
+  margin: auto;
+}
+.project {
+  background-color: var(--light-blue);
+  padding: 2vw;
+  color: var(--light-secondary-color);
+  font-size: 2vw;
+  position: relative;
+}
+
+.project .title {
+  font-size: 3vw;
+  margin-bottom: 2vw;
+  color: white;
+}
+.task {
+  padding: 1vw;
+  position: relative;
+  font-size: 1vw;
+  color: var(--darker-secondary-color);
+}
+.task .title {
+  color: black;
+  margin-left: -5px;
+}
+.task:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  background-color: var(--dark-blue);
+  height: 2px;
+  width: 80%;
+  bottom: 0vw;
+  left: 10%;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2vw;
+}
+.buttons button {
+  padding: 0.5vw 1vw;
+  color: var(--white-bg);
+  border-radius: 20%/40%;
+  border: none;
+  font-weight: bold;
+  font-size: 2vw;
+}
+.buttons .del-button {
+  background-color: red;
+}
+.buttons .edit-button {
+  background-color: #1e3a8a;
+}
+.buttons .done-button {
+  background-color: green;
+}
+.buttons .add-task {
+  display: block;
+  background-color: rgb(21, 255, 0);
+  position: absolute;
+  top: 2vw;
+  right: 20px;
+}
+.form-div {
+  position: fixed;
+  top: 20vh;
+  left: 20vw;
+}
+.form-div .mask {
+  background-color: rgba(0, 0, 0, 0.253);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 0;
+  left: 0;
+}
+.form-div .form-header {
+  z-index: 1;
+  position: relative;
+}
+.form-div form {
+  z-index: 1;
+  position: relative;
+  background: white;
+  height: 50vh;
+  width: 50vw;
+  padding: 4vw 10vw;
+  border: 2px solid cyan;
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form-div form .input-div {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 5vw;
+  align-items: center;
+}
+.form-div form .input-div label {
+  text-transform: capitalize;
+  font-size: 2em;
+  text-align: end;
+}
+.form-div form .input-div input {
+  height: 60%;
+}
+.form-div form .input-div input,
+.form-div form .input-div textarea {
+  outline: none;
+  font-size: 1.4em;
+  border-radius: 10px;
+}
+.form-div form .input-div input:focus,
+.form-div form .input-div textarea:focus {
+  border: 2px solid var(--light-blue);
+}
+.form-div form .input-div textarea {
+  height: 100px;
+}
+
+.form-div form button {
+  width: 30%;
+  margin: auto;
+  background-color: var(--light-blue);
+  padding: 30px 10px;
+  border-radius: 20px;
+  border: 2px solid var(--white-bg);
+  font-size: 1.7em;
+  color: var(--white-bg);
+}
+.form-div form button:hover {
+  color: var(--light-blue);
+  background-color: var(--white-bg);
+  border: 2px solid var(--light-blues);
+}
