@@ -10,6 +10,9 @@ html {
   --darker-secondary-color: #aaa;
   background-color: var(--white-bg);
 }
+button {
+  cursor: pointer;
+}
 .container {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -26,10 +29,15 @@ html {
 .projects-div {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+}
+.projects-div button.add-proj {
+  margin: 0 45%;
+  width: 10%;
 }
 .project-container {
   border: 2px solid var(--dark-blue);
-  width: 50%;
+  width: 45%;
   margin: auto;
 }
 .project {
@@ -166,4 +174,24 @@ html {
   color: var(--light-blue);
   background-color: var(--white-bg);
   border: 2px solid var(--light-blues);
+}
+
+.tasks-div {
+  margin-top: 5vh;
+  border: 2px solid var(--dark-blue);
+}
+
+.completed {
+  opacity: 0.5;
+  position: relative;
+}
+.completed::before {
+  content: "Done";
+  position: absolute;
+  color: green;
+  font-size: 10vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }

@@ -4,7 +4,11 @@ export default class Task {
     this.description = description;
     this.date = date;
     this.priority = priority;
+    this.isDone = false;
   }
+  toggleState = () => {
+    this.isDone = !this.isDone;
+  };
   getTitle = () => this.title;
   getDescription = () => this.description;
   getDate = () => this.date;
