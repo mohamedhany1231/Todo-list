@@ -21,6 +21,29 @@ button {
 .navbar {
   background-color: white;
   box-shadow: 5px 0px 10px #0000002e;
+  padding: 10vh 10%;
+}
+.navbar h1 {
+  color: var(--dark-blue);
+  font-size: 2.5em;
+  margin-bottom: 10vh;
+}
+.navbar li {
+  list-style: none;
+  font-size: 1.5em;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.navbar li:hover {
+  color: var(--light-blue);
+}
+.navbar li > i {
+  color: var(--dark-blue);
+  text-decoration: none;
 }
 #content {
   margin: 5vh 5vw;
@@ -29,16 +52,14 @@ button {
 .projects-div {
   display: flex;
   gap: 20px;
+  border: 2px solid var(--dark-blue);
+  padding: 5vh 10%;
   flex-wrap: wrap;
 }
-.projects-div button.add-proj {
-  margin: 0 45%;
-  width: 10%;
-}
+
 .project-container {
   border: 2px solid var(--dark-blue);
   width: 45%;
-  margin: auto;
 }
 .project {
   background-color: var(--light-blue);
@@ -53,6 +74,31 @@ button {
   margin-bottom: 2vw;
   color: white;
 }
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3vh;
+}
+.tasks-div .add-task,
+.add-proj {
+  width: auto;
+  background-color: var(--light-blue);
+  color: white;
+  border-radius: 50%;
+  border: none;
+  padding: 20px;
+  display: block;
+  float: right;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.header h2 {
+  margin: auto;
+  font-size: 2.4em;
+}
+
 .task {
   padding: 1vw;
   position: relative;
@@ -80,7 +126,7 @@ button {
 .buttons button {
   padding: 0.5vw 1vw;
   color: var(--white-bg);
-  border-radius: 20%/40%;
+  border-radius: 50%;
   border: none;
   font-weight: bold;
   font-size: 2vw;
@@ -88,7 +134,8 @@ button {
 .buttons .del-button {
   background-color: red;
 }
-.buttons .edit-button {
+.buttons .edit-button,
+.buttons .recover-button {
   background-color: #1e3a8a;
 }
 .buttons .done-button {
@@ -96,10 +143,12 @@ button {
 }
 .buttons .add-task {
   display: block;
-  background-color: rgb(21, 255, 0);
+  background-color: #db9704;
   position: absolute;
   top: 2vw;
   right: 20px;
+  font-weight: bold;
+  border-radius: 50%;
 }
 .form-div {
   position: fixed;
@@ -179,6 +228,7 @@ button {
 .tasks-div {
   margin-top: 5vh;
   border: 2px solid var(--dark-blue);
+  padding: 5vh 10%;
 }
 
 .completed {
@@ -194,4 +244,104 @@ button {
   top: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .project-container {
+    width: 90%;
+    margin: auto;
+    font-size: 2em;
+  }
+  .project-container .title,
+  .task .title {
+    font-size: 40px;
+    text-align: center;
+  }
+  .project-container p,
+  .task p {
+    font-size: 18px;
+    text-align: center;
+  }
+  .project-container .project {
+    padding: 30px;
+  }
+  .task {
+    padding: 30px;
+  }
+  .navbar li {
+    font-size: 1.2em;
+  }
+  .buttons button {
+    padding: 10px;
+    font-size: 25px;
+  }
+}
+@media (max-width: 927px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  .navbar h1 {
+    font-size: 40px;
+    margin: 0;
+  }
+  .navbar ul {
+    display: flex;
+    gap: 20px;
+  }
+  .navbar li {
+    font-size: 25px;
+    gap: 5px;
+  }
+}
+@media (max-width: 675px) {
+  .navbar {
+    padding: 3vw;
+  }
+  .navbar h1 {
+    font-size: 5vw;
+  }
+  .navbar li {
+    font-size: 3.5vw;
+    gap: 1vw;
+  }
+  .navbar ul {
+    gap: 2vw;
+  }
+
+  .project-container .title,
+  .task .title {
+    font-size: 3.5vw;
+  }
+  .project-container p,
+  .task p {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .project-container .project {
+    padding: 5vw;
+  }
+  .task {
+    padding: 5vw;
+  }
+
+  .buttons button {
+    padding: 2vw;
+    font-size: 4vw;
+  }
+  .header h2 {
+    font-size: 10vw;
+  }
+  .tasks-div .add-task,
+  .add-proj {
+    padding: 3vw;
+    font-size: 4vw;
+  }
 }

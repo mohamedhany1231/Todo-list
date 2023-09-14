@@ -1,14 +1,15 @@
 export default class Task {
-  constructor(title, description, date, priority) {
+  constructor(title, description, date, priority, isDone = false) {
     this.title = title;
     this.description = description;
     this.date = date;
     this.priority = priority;
-    this.isDone = false;
+    this.isDone = isDone;
   }
   toggleState = () => {
     this.isDone = !this.isDone;
   };
+  getState = () => this.isDone;
   getTitle = () => this.title;
   getDescription = () => this.description;
   getDate = () => this.date;

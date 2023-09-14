@@ -1,7 +1,7 @@
 import Task from "./task";
 export default class Project extends Task {
-  constructor(title, description, date, priority, tasksArr) {
-    super(title, description, date, priority);
+  constructor(title, description, date, priority, tasksArr, isDone = false) {
+    super(title, description, date, priority, isDone);
 
     this.tasksArr = tasksArr;
   }
